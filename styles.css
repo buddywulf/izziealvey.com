@@ -1,0 +1,161 @@
+:root {
+    --text-color: #e7b852;
+    --background-color: #363636;
+    --accent-color: #555555;
+    --link-color: #e9e0ce;
+}
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Sins 7', sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    display: flex;
+    font-size: 24px;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+/* --- Sidebar Styling --- */
+.sidebar {
+    position: fixed; /* Locks the sidebar to the left */
+    top: 0;
+    left: 0;
+    width: 20vw; /* Sidebar takes up 20% of the viewport width */
+    height: 100vh; /* Full height of the viewport */
+    background-color: #2c2c2c;
+    color: var(--link-color);
+    padding-top: 30px;
+}
+
+.sidebar .logo {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.sidebar .nav-links {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar .nav-links a {
+    display: block;
+    padding: 5px 20px;
+    color: var(--link-color);
+    text-decoration: none;
+    transition: background 0.3s; /* Smooth hover effect */
+}
+
+.sidebar .nav-links a:hover {
+    background-color: var(--accent-color);
+}
+
+/* --- Smooth Submenu Styling --- */
+.submenu {
+    list-style: none;
+    background-color: var(--background-color);
+    max-height: 0; /* Keeps menu closed initially */
+    overflow: hidden; /* Prevents text from bleeding out while closed */
+    opacity: 0;
+    pointer-events: none;
+    transition: max-height 0.3s ease-out, opacity 0.2s ease-out; /* Smooth transition for opening/closing */
+}
+
+.submenu.open {
+    max-height: 250px; /* Expands menu on click (must be taller than the content) */
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.submenu a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: ;
+    text-decoration: none;
+}
+
+.submenu a:hover {
+    background-color: var(--accent-color);
+}
+
+.contact-dropdown {
+    position: relative;
+}
+
+.contact-submenu {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 14px;
+    width: 100%;
+    min-width: 200px;
+    background-color: var(--background-color);
+    border-radius: 12px;
+}
+
+.contact-submenu li {
+    margin: 0;
+    width: 100%;
+}
+
+.contact-submenu a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border-radius: 20px;
+    border: none;
+    padding: 0;
+}
+
+.contact-submenu a:hover {
+    background-color: var(--accent-color);
+}
+
+.contact-submenu img {
+    width: 40px;
+    height: 40px;
+    display: block;
+    object-fit: contain;
+}
+
+/* --- Main Content Area --- */
+.content {
+    margin-left: 20vw; /* Pushes content right to make room for sidebar */
+    width: calc(100% - 20vw);
+    padding: 60px;
+}
+
+section {
+    margin-bottom: 40px;
+    min-height: auto; /* Less forced spacing between sections */
+}
+
+.sketchfab-embed-wrapper {
+    width: 100%;
+    display: block;
+}
+
+.sketchfab-embed-wrapper iframe {
+    width: 100%;
+    height: 600px;
+    border-radius: 8px;
+}

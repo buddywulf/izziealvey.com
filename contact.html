@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Contact - Izzie Alvey - 3D Artist Portfolio</title>
+</head>
+<body>
+    <!-- SIDEBAR NAVIGATION -->
+    <nav class="sidebar">
+        <div class="logo">
+            <h4>Izzie Alvey // 3D Artist</h4>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <!-- Dropdown Menu -->
+            <li class="dropdown">
+                <a href="#" id="projects-btn">Projects <span>&#9662;</span></a>
+                <ul class="submenu" id="projects-submenu">
+                    <li><a href="project1.html">2026 // The Dog Show</a></li>
+                    <li><a href="project2.html">2026 // Fleischpyramide</a></li>
+                    <li><a href="project3.html">2026 // Almost touching</a></li>
+                    <li><a href="project4.html">Pre 2026 // Cinners</a></li>
+                </ul>
+            </li>
+            <li class="dropdown contact-dropdown">
+                <a href="#" id="contact-btn">External <span>&#9662;</span></a>
+                <ul class="submenu contact-submenu" id="contact-submenu">
+                    <li><a href="mailto:example@email.com"><img src="Images/sketchfab112c.png" alt="Sketchfab"></a></li>
+                    <li><a href="#"><img src="Images/discord112a.png" alt="Discord"></a></li>
+                    <li><a href="#"><img src="Images/artstation112b.png" alt="ArtStation"></a></li>
+                    <li><a href="#"><img src="Images/bluesky112c.png" alt="Bluesky"></a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="content">
+        <section id="contact" class="contact">
+            <h2>Contact Me</h2>
+            <p>Email: <a href="mailto:example@email.com">example@email.com</a></p>
+        </section>
+    </main>
+
+    <script src="Images/oneko.js" data-cat="Images/oneko.gif" data-after=".sidebar .logo"></script>
+
+    <!-- Submenu Toggle Script -->
+    <script>
+        const projectsBtn = document.getElementById('projects-btn');
+        const projectsSubmenu = document.getElementById('projects-submenu');
+        const contactBtn = document.getElementById('contact-btn');
+        const contactSubmenu = document.getElementById('contact-submenu');
+
+        if (projectsBtn && projectsSubmenu) {
+            projectsBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                projectsSubmenu.classList.toggle('open');
+            });
+        }
+
+        if (contactBtn && contactSubmenu) {
+            contactBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                contactSubmenu.classList.toggle('open');
+            });
+        }
+    </script>
+</body>
+</html>
