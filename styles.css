@@ -32,7 +32,7 @@ a {
     position: fixed; /* Locks the sidebar to the left */
     top: 0;
     left: 0;
-    width: 20vw; /* Sidebar takes up 20% of the viewport width */
+    width: 15vw; /* Sidebar takes up 20% of the viewport width */
     height: 100vh; /* Full height of the viewport */
     background-color: #2c2c2c;
     color: var(--link-color);
@@ -72,6 +72,10 @@ a {
     transition: max-height 0.3s ease-out, opacity 0.2s ease-out; /* Smooth transition for opening/closing */
 }
 
+.submenu.no-transition {
+    transition: none !important;
+}
+
 .submenu.open {
     max-height: 250px; /* Expands menu on click (must be taller than the content) */
     opacity: 1;
@@ -99,14 +103,13 @@ a {
     left: 0;
     top: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
-    gap: 10px;
+    gap: 5px;
     padding: 10px 14px;
     width: 100%;
     min-width: 200px;
     background-color: var(--background-color);
-    border-radius: 12px;
 }
 
 .contact-submenu li {
@@ -118,10 +121,7 @@ a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
     background-color: transparent;
-    border-radius: 20px;
     border: none;
     padding: 0;
 }
@@ -131,8 +131,8 @@ a {
 }
 
 .contact-submenu img {
-    width: 40px;
-    height: 40px;
+    width: 20px;
+    height: 20px;
     display: block;
     object-fit: contain;
 }
@@ -158,4 +158,25 @@ section {
     width: 100%;
     height: 600px;
     border-radius: 8px;
+}
+
+/* --- Hero Section --- */
+.hero {
+    display: block;
+    width: 100%;
+}
+
+.hero img {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(231, 184, 82, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    object-fit: cover;
+}
+
+.hero img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5), 0 0 40px rgba(231, 184, 82, 0.2);
 }
